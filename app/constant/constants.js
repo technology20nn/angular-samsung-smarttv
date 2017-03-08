@@ -144,5 +144,12 @@
                 }
             }
         )
+        .constant('systemEvents', {
+            CHANGE_LIVE_EVENT: 1,
+            MEDIA_PLAY_EVENT:2
+        })
+        .constant('timeEffects', {
+            TIME_DETERMINE_HOLD_KEY: 200
+        })
 
 })();

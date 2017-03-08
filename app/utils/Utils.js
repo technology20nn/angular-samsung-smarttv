@@ -1,10 +1,10 @@
 (function(){
-	angular.module("app.utils", ["app.configuration"])
+	angular.module("app.utils", ["app.configuration", "app.constants"])
 		.provider("Utils", function(){
 			var logMessageEnabled = null,
 				useConsoleLogMethod = true;
 
-			this.$get = function($timeout, ConfigData){
+			this.$get = function($timeout, ConfigData, timeEffects){
 				var publicMethods = {},
 					targetLogTag = null;
 
@@ -48,6 +48,11 @@
 						}
 					}
 				};
+                publicMethods.holdKey = function (lastTimePressed) {
+                    var diff = Date.now() - lastTimePressed;
+                    publicMethods.log("Diff time: " + diff);
+                    return (diff <= timeEffects.TIME_DETERMINE_HOLD_KEY);
+                };
 
 				return publicMethods;
 			};

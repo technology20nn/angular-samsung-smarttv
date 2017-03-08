@@ -104,6 +104,7 @@
                 if(homeData.liveEvents && homeData.liveEvents.events.length > 0){
                     angular.copy(homeData.liveEvents.events,$scope.liveEvents);
                 }
+                console.log($scope.liveEvents);
                 ContextStack.routeState(null, fstates.HOME);
             }, function (res) {
                 Utils.log("fail");
@@ -113,7 +114,16 @@
         /**
 		 * Process pressed key
          */
+        var timeLastPressed = Date.now();
+        var prevKey = 0;
         function beforeHandleKey(context) {
+            if(prevKey == context.event.keyCode && Utils.holdKey(timeLastPressed)){
+                Utils.log("HoldKey " + prevKey, TAG);
+                return false;
+            }
+            prevKey = context.event.keyCode;
+            timeLastPressed = Date.now();
+
             Utils.log("Key: " + context.event.keyCode, TAG);
             Utils.log("Current layer: " + $scope.currentLayer, TAG);
             //Process back button

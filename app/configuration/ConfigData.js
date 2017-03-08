@@ -5,7 +5,9 @@
 				isSmartTVMode,
 				logMessageEnabled = true,
 				deviceInfo = {},
-				publicMethods = {};
+				publicMethods = {},
+                resolutionWidth = 1920;
+			var self = this;
 
 			//widgetAPI object only exists in real device mode so we base on this variable to tell if the app is being run
 			//on a real tv device or on a web browser
@@ -20,6 +22,14 @@
                 	//Fake for developer
                 	deviceInfo.duid = "123456";
 				}
+                tizenInfo.getPropertyValue(
+                    "DISPLAY",
+                    function (display) {
+                        self.resolutionWidth = display.resolutionWidth;
+                    },
+                    function(error) {
+                    }
+                );
 			} else {
 				isSmartTVMode = false;
 				deviceInfo.platform = "Tizen";
@@ -58,6 +68,9 @@
 
 			publicMethods.getDeviceInfo = function () {
 				return deviceInfo;
+            };
+			publicMethods.getResolutionWidth = function () {
+				return resolutionWidth;
             };
 
 			return publicMethods;

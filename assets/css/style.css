@@ -190,11 +190,12 @@ li {
 .right-player .live-score {
 	width: 100%;
 	// background: rgb(0,40,17);
+	-webkit-transition: transform .5s;
 }
 .item-live {
 	width: 85%;
 	height: 110px;
-	background: rgb(0,53,23);
+	background: rgb(0, 53, 23);
 }
 /**********///***********/
 /***** scroll bottom*******/
@@ -221,6 +222,8 @@ li {
 .list-area {
 	width: 100%;
 	height: 203px;
+	transition: transform .5s ease-in-out;
+	-webkit-transition: transform 0.5s ease-in-out;
 }
 .list-area .item {
 	width: 356px;
@@ -468,6 +471,7 @@ li {
 	position: absolute;
     overflow: hidden;
     top: 115px;
+    -webkit-transition: transform .5s
 }
 .item-live .live-small {
 	width: 100px;
@@ -545,6 +549,7 @@ li {
   left: 0;
   box-shadow:0 0 10px 3px rgba(0,0,0,0.3);
   top: 50px;
+  -webkit-transition: transform .5s;
 }
 /***** form confim******/
 .form-confirm {
@@ -582,11 +587,35 @@ li {
     line-height: 2.2;
     color: #ffffff;
 }
+.form-right .exit.focused {
+    width: 40%;
+    float: right;
+    height: 60%;
+    background: #f3100f;
+    text-align: center;
+    margin-top: 20px;
+    font: 30px 'Roboto Medium';
+    text-transform: uppercase;
+    line-height: 2.2;
+    color: #ffffff;
+}
 .form-right .exit.no {
     width: 40%;
     float: right;
     height: 60%;
     background: rgb(1,72,32);
+    text-align: center;
+    margin-top: 20px;
+    font: 30px 'Roboto Medium';
+    text-transform: uppercase;
+    line-height: 2.2;
+    color: #ffffff;
+}
+.form-right .exit.no.focused{
+    width: 40%;
+    float: right;
+    height: 60%;
+    background: rgb(11, 234, 109);
     text-align: center;
     margin-top: 20px;
     font: 30px 'Roboto Medium';

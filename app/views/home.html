@@ -1,5 +1,8 @@
 <div class="player">
-    <div class="main-player"><img src="assets/img/player.jpg"></div>
+    <div class="main-player">
+        <img src="assets/img/player.jpg">
+        <i-media-player eventitem="activeEvent"></i-media-player>
+    </div>
     <div class="right-player">
         <div class="live-score">
             <div class="item-live">
@@ -145,8 +148,8 @@
         <div class="title">Lịch trực tiếp</div>
         <div class="list-area" id="live-events">
             <!-- bong da -->
-            <div class="item" ng-repeat="item in $ctrl.events" focusable="{{item.getFocusable($ctrl.depth,$index)}}" on-focused="$ctrl.itemOnFocused($event, item, $index)">
-                <live-event event-item="{{$index}}" dynamic-update="0"></live-event>
+            <div class="item" ng-repeat="item in $ctrl.events" focusable="{{item.getFocusable($ctrl.depth,$index)}}" on-focused="$ctrl.itemOnFocused($event, item, $index)" on-selected="$ctrl.itemOnSelected($event, item, $index)">
+                <live-event eventitem="item" dynamic-update="0"></live-event>
             </div>
         </div>
     </div>
@@ -154,7 +157,7 @@
     <div class="list-scroll hidden" >
         <div class="list-area">
             <div class="item active">
-                <live-event event-item="{{activeEventIndex}}" dynamic-update="1"></live-event>
+                <live-event eventitem="activeEvent" dynamic-update="1"></live-event>
             </div>
         </div>
     </div>
