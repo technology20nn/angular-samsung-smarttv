@@ -1,0 +1,31 @@
+<div id="loading-bg" ng-class="{'face-out': !isActiveLayer(vlayers.LOADING)}" ng-show="isActiveLayer(vlayers.LOADING)">
+    <div id="loading-icon">
+    </div>
+</div>
+
+<div class="welcome" ng-class="{'fade-out': !isActiveLayer(vlayers.SPLASH)}" ng-show="isActiveLayer(vlayers.SPLASH)">
+    <img class="caph" src="assets/img/loading.gif" alt="">
+</div>
+<div class="wrapper isport">
+    <fconfirm ng-show="isActiveLayer(vlayers.DIALOG_CONFIRM)"></fconfirm>
+    <div class="main-isport">
+        <div class="menu-scroll">
+            <div class="menu-item">
+                <div class="icon icon-bongda"></div>
+            </div>
+            <div class="menu-item">
+                <div class="icon icon-tenis"></div>
+            </div>
+            <div class="menu-item">
+                <div class="icon icon-golf"></div>
+            </div>
+            <div class="menu-item">
+                <div class="icon icon-bongro"></div>
+            </div>
+        </div>
+        <div class="main-right">
+            <ui-view name="home" events="liveEvents" main="mainCtrl" ng-show="mainCtrl.currentLayer == mainCtrl.vlayers.HOME"></ui-view>
+            <ui-view name="content"></ui-view>
+        </div>
+    </div>
+</div>

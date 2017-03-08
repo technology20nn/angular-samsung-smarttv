@@ -1,0 +1,9 @@
+<div class="form-confirm">
+    <div class="form-left text-left">
+        {{alertMessage}}
+    </div>
+    <div class="form-right">
+        <div class="exit" focusable="{depth: {{depth}}, name: 'callback-ok'}" on-selected="confirmOK()">OK</div>
+        <div class="exit no" focusable="{depth: {{depth}}, name: 'callback-cancel'}"  on-selected="confirmCancel()">Bỏ qua</div>
+    </div>
+</div>

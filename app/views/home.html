@@ -1,0 +1,161 @@
+<div class="player">
+    <div class="main-player"><img src="assets/img/player.jpg"></div>
+    <div class="right-player">
+        <div class="live-score">
+            <div class="item-live">
+                <div class="logo-small icon-bongda"></div>
+                <div class="live-small left">
+                    <div class="name text-uppercase text-right"> mu</div>
+                </div>
+                <div class="live-small image left">
+                    <img src="assets/img/mu-live.png">
+                </div>
+                <div class="live-small left">
+                    <div class="time"> 23:00</div>
+                    <div class="date"> 13/03/2017</div>
+                </div>
+                <div class="live-small image left">
+                    <img src="assets/img/man-city-live.png">
+                </div>
+                <div class="live-small left">
+                    <div class="name text-uppercase text-left"> MCity</div>
+                </div>
+            </div>
+
+            <div class="item-live">
+                <div class="logo-small icon-bongda"></div>
+                <div class="live-small left">
+                    <div class="name text-uppercase text-right"> mu</div>
+                </div>
+                <div class="live-small image left">
+                    <img src="assets/img/mu-live.png">
+                </div>
+                <div class="live-small left">
+                    <div class="time"> 23:00</div>
+                    <div class="date"> 13/03/2017</div>
+                </div>
+                <div class="live-small image left">
+                    <img src="assets/img/man-city-live.png">
+                </div>
+                <div class="live-small left">
+                    <div class="name text-uppercase text-left"> MCity</div>
+                </div>
+            </div>
+            <div class="item-live">
+                <div class="logo-small icon-bongda"></div>
+                <div class="live-small left">
+                    <div class="name text-uppercase text-right"> mu</div>
+                </div>
+                <div class="live-small image left">
+                    <img src="assets/img/mu-live.png">
+                </div>
+                <div class="live-small left">
+                    <div class="time"> 23:00</div>
+                    <div class="date"> 13/03/2017</div>
+                </div>
+                <div class="live-small image left">
+                    <img src="assets/img/man-city-live.png">
+                </div>
+                <div class="live-small left">
+                    <div class="name text-uppercase text-left"> MCity</div>
+                </div>
+            </div>
+            <!--  -->
+            <div class="scroll-item" >
+                <div class="live-up">
+                    <div class="icon icon-arrow"></div>
+                </div>
+                <div class="item-live">
+                    <div class="logo-small icon-bongda"></div>
+                    <div class="live-small left">
+                        <div class="name text-uppercase text-right"> mu</div>
+                    </div>
+                    <div class="live-small image left">
+                        <img src="assets/img/mu-live.png">
+                    </div>
+                    <div class="live-small left">
+                        <div class="time"> 23:00</div>
+                        <div class="date"> 13/03/2017</div>
+                    </div>
+                    <div class="live-small image left">
+                        <img src="assets/img/man-city-live.png">
+                    </div>
+                    <div class="live-small left">
+                        <div class="name text-uppercase text-left"> MCity</div>
+                    </div>
+                </div>
+                <!-- show keo -->
+                <div class="live-keo" id="item_keo_01">
+                    <div class="item-keo text-center">
+                        <div class="header text-uppercase">KÈO CHÂU Á</div>
+                        <div class="home">
+                            <div class="name"> Chủ</div>
+                            <div class="propo"> 1.90</div>
+                        </div>
+                        <div class="home">
+                            <div class="name"> Tỷ lệ</div>
+                            <div class="propo keo"> 0.75 : 0</div>
+                        </div>
+                        <div class="home">
+                            <div class="name"> Khách</div>
+                            <div class="propo"> 1.90</div>
+                        </div>
+                    </div>
+                    <div class="item-keo text-center">
+                        <div class="header text-uppercase">KÈO CHÂU ÂU</div>
+                        <div class="home">
+                            <div class="name"> Chủ</div>
+                            <div class="propo"> 1.90</div>
+                        </div>
+                        <div class="home">
+                            <div class="name"> Tỷ lệ</div>
+                            <div class="propo keo"> 0.75 : 0</div>
+                        </div>
+                        <div class="home">
+                            <div class="name"> Khách</div>
+                            <div class="propo"> 1.90</div>
+                        </div>
+                    </div>
+                    <div class="item-keo text-center">
+                        <div class="header text-uppercase">TÀI/XỈU</div>
+                        <div class="home">
+                            <div class="name"> Tài</div>
+                            <div class="propo"> 1.90</div>
+                        </div>
+                        <div class="home">
+                            <div class="name"> Số bàn</div>
+                            <div class="propo keo"> 4.75</div>
+                        </div>
+                        <div class="home">
+                            <div class="name"> Xỉu</div>
+                            <div class="propo"> 1.90</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="live-up">
+                    <div class="icon icon-arrow-1"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="live-bottom">
+    <div class="list-scroll">
+        <div class="title">Lịch trực tiếp</div>
+        <div class="list-area" id="live-events">
+            <!-- bong da -->
+            <div class="item" ng-repeat="item in $ctrl.events" focusable="{{item.getFocusable($ctrl.depth,$index)}}" on-focused="$ctrl.itemOnFocused($event, item, $index)">
+                <live-event event-item="{{$index}}" dynamic-update="0"></live-event>
+            </div>
+        </div>
+    </div>
+    <!-- list scroll focus hidden -->
+    <div class="list-scroll hidden" >
+        <div class="list-area">
+            <div class="item active">
+                <live-event event-item="{{activeEventIndex}}" dynamic-update="1"></live-event>
+            </div>
+        </div>
+    </div>
+</div>
