@@ -42,6 +42,7 @@
             deviceInfo.smartTVMode = isSmartTVMode;
 
 			publicMethods.init = function (configData) {
+				console.log(configData);
 				if(configData.appConfig){
 					var appConfig = configData.appConfig;
 					isProductionMode = (appConfig.isProductionMode) ? true : false;

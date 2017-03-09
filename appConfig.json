@@ -1,6 +1,6 @@
 {
 	"appConfig": {
-		"isProductionMode" : false,
-		"logMessageEnabled": true
+		"isProductionMode" : true,
+		"logMessageEnabled": false
 	}
 }

@@ -12,14 +12,10 @@
 					var logMsg = "Log message is not available",
 						extraTag = (isError===true) ? "[ERROR] " : "";
 
-					if(logMessageEnabled == null || logMessageEnabled == undefined){
-						logMessageEnabled = ConfigData.isLogMessageEnabled();
-						//We should not do any logging at all if logMessage is not enabled
-						//so we notify user that Log message is not available the first time when log function is first called
-						if(logMessageEnabled===false){
-							performLogging();
-						}
-					}
+                    logMessageEnabled = ConfigData.isLogMessageEnabled();
+                    if(logMessageEnabled===false){
+                        return;
+                    }
 
 					if( logMessageEnabled===true){
 						if(!angular.isString(logTag)){

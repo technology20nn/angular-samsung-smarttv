@@ -140,17 +140,17 @@
             };
 
             var linker = function (scope, element, attrs) {
-                scope.eventItem = scope.eventLoaded;
                 var newEl = angular.element(getTemplate(scope.eventLoaded));
-                element.append(newEl);
                 $compile(newEl)(scope);
+                scope.eventItem = scope.eventLoaded;
+                element.append(newEl);
 
                 if (attrs.dynamicUpdate != undefined && attrs.dynamicUpdate == "1") {
                     scope.$on(systemEvents.CHANGE_LIVE_EVENT, function (event, data) {
                         var newEl = angular.element(getTemplate(data));
+                        $compile(newEl)(scope);
                         scope.eventItem = data;
                         element.html(newEl);
-                        $compile(newEl)(scope);
                     });
                 }
             };

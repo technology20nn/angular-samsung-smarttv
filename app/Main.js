@@ -30,3 +30,17 @@ Main.onUnload = function(){
         Main.mainController.onApplicationUnload();
     }
 };
+
+document.addEventListener('visibilitychange', function() {
+    if(document.hidden){
+        if( Main.mainController!=null
+            && Main.mainController.onApplicationUnload!=null){
+            Main.mainController.onApplicationSuspend();
+        }
+    } else {
+        if( Main.mainController!=null
+            && Main.mainController.onApplicationUnload!=null){
+            Main.mainController.onApplicationRestore();
+        }
+    }
+});

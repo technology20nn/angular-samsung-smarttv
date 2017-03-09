@@ -14,6 +14,7 @@
                 $scope.activeEventIndex = 0;
                 $scope.events = [];
                 $scope.activeEvent = null;
+                $scope.liveScoreIndex = 0;
                 var depth = 0;
                 var group = '';
                 var layer = 0;
@@ -40,8 +41,39 @@
                 this.itemOnSelected = function ($event, item, $index) {
                     $scope.activeEvent = $scope.events[$index];
                     $scope.$broadcast(systemEvents.MEDIA_PLAY_EVENT, $scope.activeEvent);
-                }
+                };
 
+                this.liveScoreOnFocused = function($event,type){
+                    Utils.log("Button live score focus: " + type, TAG);
+                };
+
+                /**
+                 *
+                 * @param $event
+                 * @param type (1: UP, 2: Down)
+                 */
+                this.liveScoreOnSelected = function($event,type){
+                    Utils.log("Button live score selected: " + type, TAG);
+                    /**
+                     * Khi click UP: thi di y = am
+                     * Khi click Down: thi y = duong
+                     */
+                    if(type == 1){
+                        if($scope.liveScoreIndex < -1){
+                            Utils.log("Max UP", TAG);
+                            return;
+                        }
+                        $scope.liveScoreIndex--;
+
+                    }else{
+                        if($scope.liveScoreIndex > 1){
+                            Utils.log("Max Down", TAG);
+                            return;
+                        }
+                        $scope.liveScoreIndex++;
+                    }
+                    document.getElementById('live-score-list').style.transform = 'translate3d(0, '+$scope.liveScoreIndex*356+'px, 0)';
+                };
             }
         })
 })();

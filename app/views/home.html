@@ -5,7 +5,46 @@
     </div>
     <div class="right-player">
         <div class="live-score">
-            <div class="item-live">
+            <div id="live-score-list" class="list-score">
+                <div class="item-live">
+                    <div class="logo-small icon-bongda"></div>
+                    <div class="live-small left">
+                        <div class="name text-uppercase text-right"> mu</div>
+                    </div>
+                    <div class="live-small image left">
+                        <img src="assets/img/mu-live.png">
+                    </div>
+                    <div class="live-small left">
+                        <div class="time"> 23:00</div>
+                        <div class="date"> 13/03/2017</div>
+                    </div>
+                    <div class="live-small image left">
+                        <img src="assets/img/man-city-live.png">
+                    </div>
+                    <div class="live-small left">
+                        <div class="name text-uppercase text-left"> MCity</div>
+                    </div>
+                </div>
+                <div class="item-live">
+                    <div class="logo-small icon-bongda"></div>
+                    <div class="live-small left">
+                        <div class="name text-uppercase text-right"> mu</div>
+                    </div>
+                    <div class="live-small image left">
+                        <img src="assets/img/mu-live.png">
+                    </div>
+                    <div class="live-small left">
+                        <div class="time"> 23:00</div>
+                        <div class="date"> 13/03/2017</div>
+                    </div>
+                    <div class="live-small image left">
+                        <img src="assets/img/man-city-live.png">
+                    </div>
+                    <div class="live-small left">
+                        <div class="name text-uppercase text-left"> MCity</div>
+                    </div>
+                </div>
+                <div class="item-live">
                 <div class="logo-small icon-bongda"></div>
                 <div class="live-small left">
                     <div class="name text-uppercase text-right"> mu</div>
@@ -24,48 +63,10 @@
                     <div class="name text-uppercase text-left"> MCity</div>
                 </div>
             </div>
-
-            <div class="item-live">
-                <div class="logo-small icon-bongda"></div>
-                <div class="live-small left">
-                    <div class="name text-uppercase text-right"> mu</div>
-                </div>
-                <div class="live-small image left">
-                    <img src="assets/img/mu-live.png">
-                </div>
-                <div class="live-small left">
-                    <div class="time"> 23:00</div>
-                    <div class="date"> 13/03/2017</div>
-                </div>
-                <div class="live-small image left">
-                    <img src="assets/img/man-city-live.png">
-                </div>
-                <div class="live-small left">
-                    <div class="name text-uppercase text-left"> MCity</div>
-                </div>
-            </div>
-            <div class="item-live">
-                <div class="logo-small icon-bongda"></div>
-                <div class="live-small left">
-                    <div class="name text-uppercase text-right"> mu</div>
-                </div>
-                <div class="live-small image left">
-                    <img src="assets/img/mu-live.png">
-                </div>
-                <div class="live-small left">
-                    <div class="time"> 23:00</div>
-                    <div class="date"> 13/03/2017</div>
-                </div>
-                <div class="live-small image left">
-                    <img src="assets/img/man-city-live.png">
-                </div>
-                <div class="live-small left">
-                    <div class="name text-uppercase text-left"> MCity</div>
-                </div>
             </div>
             <!--  -->
-            <div class="scroll-item" >
-                <div class="live-up">
+            <div class="scroll-item">
+                <div class="live-up" focusable="{depth:{{$ctrl.depth}} , name: livescore-up}" on-focused="$ctrl.liveScoreOnFocused($event,1)" on-selected="$ctrl.liveScoreOnSelected($event,1)">
                     <div class="icon icon-arrow"></div>
                 </div>
                 <div class="item-live">
@@ -135,11 +136,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="live-up">
+                <div class="live-up" focusable="{depth:{{$ctrl.depth}} , name: livescore-down}" on-focused="$ctrl.liveScoreOnFocused($event,2)" on-selected="$ctrl.liveScoreOnSelected($event,2)">
                     <div class="icon icon-arrow-1"></div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

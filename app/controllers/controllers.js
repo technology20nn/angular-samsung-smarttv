@@ -64,6 +64,16 @@
                 tizenApp.getCurrentApplication().exit();
             }
         };
+
+		this.onApplicationSuspend = function () {
+            Utils.log("***onApplication Suspend***", TAG);
+            webapis.avplay.suspend();
+        };
+
+		this.onApplicationRestore = function () {
+            Utils.log("***onApplication Restore***", TAG);
+            webapis.avplay.restore();
+        };
 		//========================================================================
 
         /**

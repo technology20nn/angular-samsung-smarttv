@@ -47,12 +47,14 @@ app.run(function( $http,
 	var TAG = "***Application RUN PHASE***",
 		path = document.URL,
 		configUrl = path.substring(0, path.lastIndexOf('/')) + "/" + "appConfig.json";
-	$http.get(configUrl)
-		.then(function(data){
-			setupApplication(data.data);
-			Utils.log("Application Config loaded completed", TAG);
-		});
-
+	    console.log("ConfigURL: " + path);
+    var configData = {
+        "appConfig": {
+            "isProductionMode" : true,
+            "logMessageEnabled": false
+        }
+    };
+    setupApplication(configData);
 	function setupApplication(configData){
 		ConfigData.init(configData);
 	}
